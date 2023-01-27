@@ -2,7 +2,7 @@
     "name": "typewise",
     "version": "1.0.0",
     "main": "index.js",
-    "sourceType":"module",
+    "type":"module",
     "scripts": {
         "test": "npx mocha --exit"
     },
