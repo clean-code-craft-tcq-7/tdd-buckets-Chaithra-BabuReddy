@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { getRangeOfCurrents } from "./currentRange.js";
+import { getRangeOfCurrents } from "../currentRange.js";
 describe('currentRange', () => {
     it('should return range as 2 for 2 inputs', () => {
         const mockData = [4, 5];
