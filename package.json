@@ -1,8 +1,7 @@
 {
-    "name": "CurrentRange",
+    "name": "typewise",
     "version": "1.0.0",
-    "main": "currentRange.js",
-    "type":"module",
+    "main": "index.js",
     "scripts": {
         "test": "npx mocha --exit"
     },

@@ -15,9 +15,6 @@ jobs:
 
       - name: Install Dependncies
         run:  sudo npm install
-
-      - name: Current-range
-        run: node currentRange.js
       
       - name: Lint with eslint
         run: |
@@ -32,6 +29,3 @@ jobs:
           name: coverage
           path: ./coverage
           retention-days: 21
-
-      
-     
