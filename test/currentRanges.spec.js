@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { getRangeOfCurrents } from '../currentRange.js';
+import { getRangeOfCurrents } from "../currentRange.js";
 describe('currentRange', () => {
     it('should return range "0" for empty array', () => {
         let res = getRangeOfCurrents([]);
