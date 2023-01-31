@@ -3,7 +3,7 @@ import { getRangeOfCurrents } from "../currentRange.js";
 describe('currentRange', () => {
     it('should return message "No range of Values "for empty array', () => {
         let res = getRangeOfCurrents([]);
-        expect(res).to.equal('No range of values');
+        expect(res).to.equal('No range of values detected');
     });
     it('should return range "1-1:1 for single input value', () => {
         let res = getRangeOfCurrents([1]);

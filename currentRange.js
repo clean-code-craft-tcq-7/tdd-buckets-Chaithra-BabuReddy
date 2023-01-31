@@ -3,9 +3,12 @@ export function getRangeOfCurrents(nums) {
     let cnt = 1;
     let rangeOfCurrents = [];
     let lowestNum = sortedNums[0];
-    let highestNum = sortedNums[1];
+    let highestNum = sortedNums[0];
+    if (nums.length === 0) {
+        return "No range of values detected";
+    }
     for (let i = 0; i < sortedNums.length; i++) {
-        if (isNumsConsecutive(sortedNums[i],sortedNums[i+1])) {
+        if (isNumsConsecutive(sortedNums[i], sortedNums[i + 1])) {
             highestNum = sortedNums[i + 1];
             cnt++;
         } else {
