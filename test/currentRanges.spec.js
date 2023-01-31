@@ -1,13 +1,16 @@
 import { expect } from 'chai';
 import { getRangeOfCurrents } from "../currentRange.js";
 describe('currentRange', () => {
-    it('should return range "0" for empty array', () => {
+    it('should return message "No range of Values "for empty array', () => {
         let res = getRangeOfCurrents([]);
-        expect(res).to.include(0);
+        expect(res).to.equal('No range of values');
+    });
+    it('should return range "1-1:1 for single input value', () => {
+        let res = getRangeOfCurrents([1]);
+        expect(res).to.include("{1-1:1}");
     })
     it('should return range "4-5:2" for [4,5] input range', () => {
-        const mockData = [4, 5];
-        let res = getRangeOfCurrents(mockData);
+        let res = getRangeOfCurrents([4, 5]);
         expect(res).to.include("{4-5:2}");
     });
     it('should return range of values for multiple current ranges', () => {
