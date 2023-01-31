@@ -1,21 +1,28 @@
 export function getRangeOfCurrents(nums) {
-    let sortedNums = nums.sort((a, b) => { return a - b });
+    let sortedNums = sortNumsInAscending(nums);
     let cnt = 1;
-    let range = [];
-    let first = sortedNums[0];
-    let next = sortedNums[1]
+    let rangeOfCurrents = [];
+    let lowestNum = sortedNums[0];
+    let highestNum = sortedNums[1];
     for (let i = 0; i < sortedNums.length; i++) {
-        if (sortedNums[i] === sortedNums[i + 1] || (sortedNums[i + 1] - sortedNums[i]) === 1) {
-            next = sortedNums[i + 1]
-            cnt++
+        if (isNumsConsecutive(sortedNums[i],sortedNums[i+1])) {
+            highestNum = sortedNums[i + 1];
+            cnt++;
         } else {
-            let x = `${first}-${next}:${cnt}`
-            range.push(x);
-            first = sortedNums[i + 1];
-            next = sortedNums[i + 1]
+            let range = `{${lowestNum}-${highestNum}:${cnt}}`
+            range.push(range);
+            lowestNum = sortedNums[i + 1];
+            highestNum = sortedNums[i + 1];
             cnt = 1;
         }
     }
-    return range;
+    return rangeOfCurrents;
+}
 
+function isNumsConsecutive(firstNum, nextNum) {
+    return firstNum === nextNum || (firstNum - nextNum) === 1;
+}
+
+function sortNumsInAscending(nums) {
+    return nums.sort((a, b) => { return a - b });
 }
