@@ -10,7 +10,7 @@ export function getRangeOfCurrents(nums) {
             cnt++;
         } else {
             let range = `{${lowestNum}-${highestNum}:${cnt}}`
-            range.push(range);
+            rangeOfCurrents.push(range);
             lowestNum = sortedNums[i + 1];
             highestNum = sortedNums[i + 1];
             cnt = 1;
@@ -20,7 +20,7 @@ export function getRangeOfCurrents(nums) {
 }
 
 function isNumsConsecutive(firstNum, nextNum) {
-    return firstNum === nextNum || (firstNum - nextNum) === 1;
+    return firstNum === nextNum || (nextNum - firstNum) === 1;
 }
 
 function sortNumsInAscending(nums) {
