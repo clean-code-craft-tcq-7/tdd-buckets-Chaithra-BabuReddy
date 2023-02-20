@@ -4,7 +4,7 @@ function bitConverter(input, maxAmpValue = 10) {
     });
 }
 
-function A2D_converter(input, maxAmpValue = 10) {
+function a2d_Converter(input, maxAmpValue = 10) {
     if (input.some((value) => value > maxBitValue)) {
         throw new Error('Error-invalid reading');
     }
@@ -13,4 +13,4 @@ function A2D_converter(input, maxAmpValue = 10) {
 
 const maxBitValue = 4094;
 
-module.exports = { A2D_converter }
+module.exports = { a2d_Converter};
